@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <title>{% block title %}{% endblock title %}| Review_scrapper</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body >
+ 
+    
+    <div class="container-fluid  ">
+      <div class="row ">
+        <nav class="navbar navbar-expand-sm bg-dark  navbar-dark fixed-top nav ">
+        <div class="col-sm-3 logo">
+
+        
+            <a class="navbar-brand text-light  " href="#">Review_scrapper</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 collapse navbar-collapse head " id="collapsibleNavbar">
+
+            <ul class="navbar-nav nav ">
+              <li class="nav-item nav-li">
+                <a class="nav-link active link" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link" href="/review">Review</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link" href="/aboutus">AboutUs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active link" href="/donate">DonateUs</a>
+              </li>
+            </ul>
+        </div>
+      </nav>  
+      </div> 
+    </div>
+
+    
+      {% block body %}  
+      {% endblock body %}  
+  
+  
+
+  <!-- Footer -->
+  <footer class="bg-dark">
+    <div class="container py-5">
+      <div class="row py-4 ">
+        <div class="col-sm-4 px-3 text-start">
+         <h6 class="text-uppercase font-weight-bold mb-4 text-light">Review_scrapping</h6>
+          <p class="font-italic text-muted"> Web Scraping, also known as web harvesting or web data extraction, is used to extract data from websites. Although it can be done manually by a user, it is generally done by a bot or an AI controlled web crawler.</p>
+          
+        </div>
+        <div class="col-sm-4 ">
+          <h6 class="text-uppercase font-weight-bold mb-4 text-light">Contact Us</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><i class="fa-solid fa-phone text-light"></i> <a href="#" class="text-muted">7239085022</a></li>
+            <li class="mb-2"><i class="fa-solid fa-envelope text-light"></i> <a href="#" class="text-muted">Siddiqui8573@gmail.com</a></li>
+            <li class="mb-2"><i class="fa-brands fa-linkedin text-light"></i> <a href="#" class="text-muted">LinkedIn</a></li>
+            <li class="mb-2"><i class="fa-brands fa-instagram text-light"></i> <a href="#" class="text-muted">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h6 class="text-uppercase font-weight-bold mb-4 text-light">Pages</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="" class="text-muted">Home</a></li>
+            <li class="mb-2"><a href="/reviews" class="text-muted">Reviews</a></li>
+            <li class="mb-2"><a href="/aboutus" class="text-muted">About Us</a></li>
+            <li class="mb-2"><a href="/donate" class="text-muted">Donate Us</a></li>
+          </ul>
+        </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">©All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End -->
+
+</body>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
