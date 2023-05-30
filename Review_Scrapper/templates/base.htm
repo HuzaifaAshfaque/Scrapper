@@ -21,8 +21,7 @@
 <body >
  
     
-    <div class="container-fluid  ">
-      <div class="row ">
+     <div class="row ">
         <nav class="navbar navbar-expand-sm bg-dark  navbar-dark fixed-top nav ">
         <div class="col-sm-3 logo">
 
@@ -52,17 +51,19 @@
         </div>
       </nav>  
       </div> 
-    </div>
+    
 
     
-      {% block body %}  
+      {% block body %} 
+      
+      
       {% endblock body %}  
   
   
 
   <!-- Footer -->
-  <footer class="bg-dark">
-    <div class="container py-5">
+  
+    <div class="container-fluid py-5 bg-dark">
       <div class="row py-4 ">
         <div class="col-sm-4 px-3 text-start">
          <h6 class="text-uppercase font-weight-bold mb-4 text-light">Review_scrapping</h6>
@@ -94,7 +95,6 @@
         <p class="text-muted mb-0 py-2">©All rights reserved.</p>
       </div>
     </div>
-  </footer>
   <!-- End -->
 
 </body>
