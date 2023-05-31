@@ -65,7 +65,7 @@ padding: 0;
 /* --------------------------------------------------------------- */
 /* index.html css  */
  .main{
-  min-height: 500px;
+  min-height: 400px;
   max-width: 100%;
  }
 
@@ -124,3 +124,14 @@ padding: 0;
       width: 125px;
       }
  }
+
+ /* ----------------------------------- */
+ .main2{
+   min-height: 300px;
+   max-width: 100%;
+  }
+
+.card{
+   height: 300px;
+   overflow-y: auto;
+}

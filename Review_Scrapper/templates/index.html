@@ -12,5 +12,31 @@ Home
             </div>
         </div>
     </div>
-</div>
+
+
+    <div class="row m-3 py-3 main2 " >
+
+       {% for x in '(0:5)' %}
+         <div class="col-sm-4 mb-2">
+            <!-- card start  -->
+            <div class="card">
+                <div class="card-body" style="width: 20rem;">
+                  <h4 class="card-title" name="subject"><span class="btn btn-success" name="rating">*</span>&nbsp; Card title</h4>
+                  <p class="card-text" name="textfield">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, qui nisi? Explicabo harum odit suscipit sit blanditiis error repellendus deserunt dolore? Excepturi iusto aut, architecto minima reiciendis explicabo amet rerum, perferendis dolore aliquid, suscipit obcaecati!</p>
+
+                </div>
+              </div>
+            <!-- card end  -->
+
+        </div>
+
+        {% endfor %}
+        </div>
+
+        
+    </div>
+    
+
+
+
  {% endblock %}
