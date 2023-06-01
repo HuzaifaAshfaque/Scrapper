@@ -17,7 +17,7 @@ box-sizing: border-box;
     
     max-width: 100%;
     min-height: 600px;
-    /* background-image: url('../images/wall1.jpg'); */
+    background-image: url('../images/wall1.jpg');
     background-color: #bbb;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -130,15 +130,16 @@ box-sizing: border-box;
 
  /* ----------------------------------- */
  .main2{
-   min-height: 300px;
+   min-height: 500px;
    max-width: 100%;
   }
 
 .flip-card {
    background-color: transparent;
    width: 100%;
-   height: 300px;
+   height: 500px;
    perspective: 1000px;
+   padding: 10px;
  }
  
  .flip-card-inner {
@@ -163,18 +164,21 @@ box-sizing: border-box;
  }
  
  .flip-card-front {
-   background-color: #bbb;
-   color: black;
-   border: 5px solid black;
-   border-radius: 10px 10px 10px 10px;
+
+  border: 2px solid grey;
+  border-radius:10%;
    
 
  }
  
  .flip-card-back {
-   
-   transform: rotateY(180deg);
+  padding-top: 25px;
+  border: 2px solid grey;
+  border-radius:10%;
+  transform: rotateY(180deg);
  }
- .embed-responsive .card-img-top {
-  object-fit: cover;
+
+ 
+.card-img{
+  border-radius: 10%;
 }
