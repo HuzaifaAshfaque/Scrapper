@@ -3,6 +3,7 @@
 body{
 margin: 0;
 padding: 0;    
+font-family: Arial, Helvetica, sans-serif;
 
 }
 .logo{
@@ -133,5 +134,5 @@ padding: 0;
 
 .card{
    height: 300px;
-   overflow-y: auto;
+   
 }
