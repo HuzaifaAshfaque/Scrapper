@@ -4,6 +4,7 @@ body{
 margin: 0;
 padding: 0;    
 font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box;
 
 }
 .logo{
@@ -16,7 +17,8 @@ font-family: Arial, Helvetica, sans-serif;
     
     max-width: 100%;
     min-height: 600px;
-    background-image: url('../images/wall1.jpg');
+    /* background-image: url('../images/wall1.jpg'); */
+    background-color: #bbb;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -132,7 +134,47 @@ font-family: Arial, Helvetica, sans-serif;
    max-width: 100%;
   }
 
-.card{
+.flip-card {
+   background-color: transparent;
+   width: 100%;
    height: 300px;
+   perspective: 1000px;
+ }
+ 
+ .flip-card-inner {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s;
+   transform-style: preserve-3d;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ }
+ 
+ .flip-card:hover .flip-card-inner {
+   transform: rotateY(180deg);
+ }
+ 
+ .flip-card-front, .flip-card-back {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+ }
+ 
+ .flip-card-front {
+   background-color: #bbb;
+   color: black;
+   border: 5px solid black;
+   border-radius: 10px 10px 10px 10px;
    
+
+ }
+ 
+ .flip-card-back {
+   
+   transform: rotateY(180deg);
+ }
+ .embed-responsive .card-img-top {
+  object-fit: cover;
 }
