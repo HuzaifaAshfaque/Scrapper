@@ -6,6 +6,7 @@ padding: 0;
 font-family: Arial, Helvetica, sans-serif;
 box-sizing: border-box;
 
+
 }
 .logo{
     padding-left: 100px;
@@ -13,18 +14,6 @@ box-sizing: border-box;
     padding-bottom: 10px;
 }
 
-.img{
-    
-    max-width: 100%;
-    min-height: 600px;
-    background-image: url('../images/wall1.jpg');
-    background-color: #bbb;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    
-    
-}
 
 
 .head{
@@ -71,6 +60,19 @@ box-sizing: border-box;
   min-height: 400px;
   max-width: 100%;
  }
+ .img{
+    
+    max-width: 100%;
+    min-height: 400px;
+    background-image: url('../images/wall1.jpg');
+    background-color: #bbb;
+    background-repeat: no-repeat;
+    background-attachment: cover;
+    background-size: 100% 100%;
+    
+    
+}
+
 
  .search-box{
     position: absolute;
@@ -132,6 +134,10 @@ box-sizing: border-box;
  .main2{
    min-height: 500px;
    max-width: 100%;
+   margin: 0;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   
   }
 
 .flip-card {
@@ -149,6 +155,7 @@ box-sizing: border-box;
    transition: transform 0.6s;
    transform-style: preserve-3d;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   
  }
  
  .flip-card:hover .flip-card-inner {
