@@ -5,6 +5,7 @@ class card(models.Model):
     ppic = models.ImageField(upload_to='static/pimages/',default="")
     pname = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
+    price = models.FloatField(default=int)
     rating = models.IntegerField()
     subject = models.CharField(max_length=80)
     desc =  models.TextField()
