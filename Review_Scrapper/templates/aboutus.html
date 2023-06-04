@@ -74,26 +74,25 @@ Aboutus
             </div>
            
         </div>
+        
         <div class="col-sm-5 bg-light">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="fs-2 text-center cform">Contact <b class="">Us <i class="fa-solid fa-phone"></i></b></div>
-<div class="row enquiry bg-light" style="min-height:500px;">
-    
-    <div class="col-sm-12 " style="padding-top:50px;">
+            <div class="fs-2 mt-3 text-center">Contact <b class="text-ocolor">US <i class="fa-solid fa-phone"></i></b></div>
+<div class="row enquiry bg-light bgimg1" style="min-height:500px;">
+    <div class="col-sm-12 " style="padding-top:30px;">
         {% if m %}
     <div class="alert alert-success">Your Message send successfully</div>
     {% endif %}
          
             <!-- start form  -->
-         <form method="post">
+         <form method="post" action="/aboutus">
             {% csrf_token %}
             
           <b class="fs-2 text-light">Send your Message :-</b> <br><br>
           <div class="input-group mb-3">
               <i class="input-group-text bg-ocolor text-light ">
                   <i class="fa-solid fa-user"></i></i>
-              <input name="name" type="text" class="form-control " placeholder="Enter your Name"/></div>
+              <input name="name" type="text" class="form-control " placeholder="Enter your Name"/>
+          </div>
           <div class="input-group mb-3">
               <i class="input-group-text bg-ocolor text-light ">
                   <i class="fa-solid fa-envelope"></i></i>
@@ -102,29 +101,28 @@ Aboutus
           <div class="input-group mb-3">
               <i class="input-group-text bg-ocolor text-light ">
                   <i class="fa-solid fa-phone"></i></i>
-              <input name="mob" type="text" class="form-control " placeholder="Enter your Mobile Number"/>
+              <input name="phone" type="text" class="form-control " placeholder="Enter your Mobile Number"/>
           </div>
           <div class="input-group mb-3">
               <i class="input-group-text bg-ocolor text-light ">
                   <i class="fa-solid fa-message"></i></i>
-              <textarea name="msg" class="form-control" placeholder="message..."></textarea>
+              <textarea name="desc" class="form-control" placeholder="message..." style="height: 100px;"></textarea>
           </div>
-          <input type="submit" value="Send message" class="form-control bg-dark text-light btn" style="width:100%;">
+ <br> <input type="submit" value="Send message" class="form-control bg-ocolor text-light btn" style="width:100%;">
       </form>
          <!-- end form  -->
       
     </div>
 
 </div>
+<hr style="height:5px;color:gray;background-color:gray; border-radius: 20px;margin-right:20px;">
 
 <div class="fs-2 text-center">Google <b class="text-ocolor">map <i class="fa-solid fa-location-dot"></i></b></div>
 <div class="row map mt-3" style="min-height: 300px;">
     <div class="col-sm-12 ps-4">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1616605872923!2d80.96419201441158!3d26.898364083133792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39995785d5f7f1a5%3A0xffa47f1efe103f0d!2sTechpile%20Technology%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1662039615667!5m2!1sen!2sin" width="100%" height="450" style="border:5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.652391545819!2d80.5296888099445!3d26.563432776760525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c141006dbdefb%3A0xaccdb969a60d3946!2sGovernment%20Polytechnic%20Unnao%20(G.P.U)!5e0!3m2!1sen!2sin!4v1685856160304!5m2!1sen!2sin"width="100%" height="450" style="border:5px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     </div>
-                </div>
-            </div>
         </div>
     </div>
 

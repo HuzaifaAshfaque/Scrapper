@@ -1,5 +1,12 @@
 from django.contrib import admin
-from scrapp.models import card
+from scrapp.models import *
 # Register your models here.
 
-admin.site.register(card)
+class cardAdmin(admin.ModelAdmin):
+    list_display = ('id','pname','name','price','rating')
+admin.site.register(card,cardAdmin)
+
+
+class contactusAdmin(admin.ModelAdmin):
+    list_display = ('id','name','email','phone','desc')
+admin.site.register(Contact,contactusAdmin)
