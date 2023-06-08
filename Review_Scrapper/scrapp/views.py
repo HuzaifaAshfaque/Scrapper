@@ -105,6 +105,6 @@ def review(request):
     
 # ----------------------------------------------------------------------------
 
-def donate(request):
-    return render(request,"donate.htm")
+def donateus(request):
+    return render(request,"donateus.html")
  
