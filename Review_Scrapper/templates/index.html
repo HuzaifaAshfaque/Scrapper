@@ -2,18 +2,19 @@
 {% block title %}
 Home
 {% endblock title %}
+<style>
+  
+</style>
 {% block body %}
 <div class="container-fluid img">
   <div class="row main">
-      <div class="col-sm-12 " style="margin-top:15%;margin-left: 40%;" >
+      <div class="col-sm-12" style="margin:auto; text-align:center; ">
+          
           <form action="/review" method="post">
             {% csrf_token %}
-              <!-- <input class="search-txt fs-5 mx-3 my-2" type="text" name="input_data" placeholder="Type to search">
-              
-              <input type="submit" class="btn"> -->
-              <input class="" type="text" placeholder="Type To Search" name="input_data">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-          </div>
+              <input class="fs-4 mt-2 rounded-pill border border-2 border-light text-light" type="text" placeholder="Type To Search" name="input_data" style="height:50px;padding-left:30px;width:50%;background:transparent;"/>
+              <button class="btn btn-outline-light mb-2 " type="submit">Search</button>
+          
 
           </form>
       </div>

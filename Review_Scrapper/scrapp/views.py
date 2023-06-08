@@ -12,6 +12,8 @@ def index(request):
     mydict = {"card":crev}
     return render(request,"index.html",context= mydict)
 
+# ------------------------------------------------------------------------------
+
 def aboutus(request):
     status = False
     if request.method == "POST":
@@ -99,9 +101,9 @@ def review(request):
 
 
     else:
-        return HttpResponse("<h1>logic did'nt work</h1>")
+        return render(request,'review.htm')
     
-
+# ----------------------------------------------------------------------------
 
 def donate(request):
     return render(request,"donate.htm")
