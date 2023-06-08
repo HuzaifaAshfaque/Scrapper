@@ -10,3 +10,8 @@ admin.site.register(card,cardAdmin)
 class contactusAdmin(admin.ModelAdmin):
     list_display = ('id','name','email','phone','desc')
 admin.site.register(Contact,contactusAdmin)
+
+
+class SearchqueryAdmin(admin.ModelAdmin):
+    list_display= ('s_query', )
+admin.site.register(Search,SearchqueryAdmin)

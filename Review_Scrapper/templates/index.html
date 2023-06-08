@@ -4,15 +4,22 @@ Home
 {% endblock title %}
 {% block body %}
 <div class="container-fluid img">
-    <div class="row main">
-        <div class="col-sm-12">
-            <div class="search-box">
-                <input class="search-txt fs-5 mx-3 my-2" type="text" name="" placeholder="Type to search">
-                <a class="search-btn mx-3 my-2" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-            </div>
-        </div>
-    </div>
+  <div class="row main">
+      <div class="col-sm-12 " style="margin-top:15%;margin-left: 40%;" >
+          <form action="/review" method="post">
+            {% csrf_token %}
+              <!-- <input class="search-txt fs-5 mx-3 my-2" type="text" name="input_data" placeholder="Type to search">
+              
+              <input type="submit" class="btn"> -->
+              <input class="" type="text" placeholder="Type To Search" name="input_data">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+
+          </form>
+      </div>
   </div>
+</div>
+
 
 
 

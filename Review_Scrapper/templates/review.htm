@@ -12,7 +12,30 @@ Review
     </div>
     <div class="row rev2">
         <div class="col-sm-2 rev2-rev1"></div>
-        <div class="col-sm-8 rev2-rev2 my-3"></div>
+        <div class="col-sm-8 rev2-rev2 my-3">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Comment Heading</th>
+                    <th scope="col">Comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for review in reviews %}
+                     <tr>
+                        <th scope="row">{{review.Product}}</th>
+                        <td>{{review.Name}}</td>
+                       <td>{{review.Rating}}</td>
+                       <td>{{review.Commenthead}}</td>
+                       <td>{{review.Comment}} </td>
+                      </tr>
+                      {% endfor %}
+                </tbody>
+              </table>
+        </div>
         <div class="col-sm-2 rev2-rev3"></div>
     </div>
 </div>

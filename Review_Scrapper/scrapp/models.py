@@ -23,3 +23,12 @@ class Contact(models.Model):
     date = models.DateField()
     def __str__(self) :
         return self.name
+####################################################################################
+
+class Search(models.Model):
+    s_query= models.CharField(max_length=30)
+    def __str__(self) :
+        return self.s_query
+    
+
+####################################################################################
