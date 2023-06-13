@@ -1,0 +1,74 @@
+{% extends 'base.htm' %}
+{% block title %}
+product
+{% endblock title %}
+{% block body %}
+
+<div class="container-fluid review">
+    <div class="row rev1">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-2 rev1-rev2">Products</div>
+        <div class="col-sm-5"></div>
+    </div>
+
+    <div class="row2">
+        <div class="col-sm-12">
+            <div class="row py-3  " >
+
+                {% for x in card %}
+                  <div class="col-sm-4 mb-2">
+                     <!-- card start  -->
+                     
+                     <div class="flip-card">
+                       <div class="flip-card-inner">
+                         <div class="flip-card-front " >
+                           <img src="/{{x.ppic}}" alt="" style="height:100%;width:100%;" class="card-img" >
+                         </div>
+                         <div class="flip-card-back bg-dark text-light ps-4 pt-3">
+                           <div class="row">
+                             <div class="col-sm-2">
+                               <span class="btn btn-success">{{x.rating}}&starf;</span>
+                             </div>
+                             <div class="col-sm-9 pt-2">
+                               <h4 class="card-title" >{{x.pname}}</h4>
+                             </div>
+                           </div>
+                           <div class="row">
+                             <div class="col-sm-12">
+                               <h5 class="pt-3">{{x.subject}}</h5>
+                             </div>
+                           </div>
+                           
+                           
+                           <div class="row mb-3 py-3" style="overflow-y: auto; height: 280px;width: 100%;">
+                             <div class="col-sm-12" >
+                               <p class="card-text">{{x.desc}}</p>
+                             </div>
+                           </div>
+                           <div class="row pt-3">
+                             <div class="col-sm-4 fs-5">&#x20B9;:<span class="text-success">{{x.price}}</span></div>
+                               <div class="col-sm-8 pt-1">
+                                 <h6 class="">Review by: <span class="text-success">{{x.name}}</span></h6>
+                               </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <!-- card end  -->
+         
+                 </div>
+         
+                 {% endfor %}
+                 </div>
+         
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -8,7 +8,7 @@ from urllib.request import urlopen as uReq
 # Create your views here.
 def index(request):
     
-    crev = card.objects.all().order_by('-id')[0:6]
+    crev = card.objects.all().order_by('-id')[0:3]
     mydict = {"card":crev}
     return render(request,"index.html",context= mydict)
 
@@ -101,7 +101,9 @@ def review(request):
 
 
     else:
-        return render(request,'review.htm')
+        crev = card.objects.all().order_by('-id')[0:6]
+        mydict = {"card":crev}
+        return render(request,'product.html',context=mydict)
     
 # ----------------------------------------------------------------------------
 
