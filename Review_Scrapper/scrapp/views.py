@@ -107,6 +107,4 @@ def review(request):
     
 # ----------------------------------------------------------------------------
 
-def donateus(request):
-    return render(request,"donateus.html")
  

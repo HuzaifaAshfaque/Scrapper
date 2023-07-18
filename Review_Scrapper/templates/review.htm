@@ -7,51 +7,38 @@ Review
 <div class="container-fluid review bg-light">
     <div class="row rev1">
         <div class="col-sm-5"></div>
-        <div class="col-sm-2 rev1-rev2">Reviews</div>
+        <div class="col-sm-2 rev1-rev2 bg-light">Reviews</div>
         <div class="col-sm-5"></div>
     </div>
     <div class="row rev2">
         <div class="col-sm-2 rev2-rev1"></div>
-        <div class="col-sm-8 rev2-rev2 my-3 bg-light">
+        <div class="col-sm-8 rev2-rev2 my-3 bg-dark">
             <div class="row ">
                 <div class="col-sm-12">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            {% for review in reviews %}
-                          <div class="carousel-item active">
-                            
-                            <div class="card mt-3 bg-dark text-light" style="min-height: 500px;">
-                                <div class="card-body">
-                                    <h1 class="text-center prod text-capitalize" style="text-shadow: 5px 5px 10px grey;font-weight:bold;">{{review.Product}}</h1>
-                                    <h3 class="text-capitalize" style="margin-top:3%;font-weight:bold;padding-left: 8%;">{{review.Commenthead}}</h3>
-                                    <div class="row" style="min-height:300px; overflow-y: auto;">
-                                        <div class="col-sm-12">
-                                            <p style="padding-left: 8%;padding-right:8% ;text-align: justify;">{{review.Comment}}</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6"><h4><b>Review By:{{review.Name}}</b></h4> 
-                                        </div>
-                                        <div class="col-sm-6 ps-5"><h4><b>Rating:{{review.Rating}}<i class="fa-solid fa-star"></i></b></h4> 
-                                        </div>
-                                    </div>
-                                </div> 
-                                
-                            </div>
-                            
-                          </div>
-                          {% endfor %}                          
-                          
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                    <div class="table-responsive pt-4">
+                        <table class="table table-striped table-dark table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Rating</th>
+                            <th scope="col">Comment Heading</th>
+                            <th scope="col">Comment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for review in reviews %}
+                             <tr>
+                                <th scope="row">{{review.Product}}</th>
+                                <td>{{review.Name}}</td>
+                               <td>{{review.Rating}}</td>
+                               <td>{{review.Commenthead}}</td>
+                               <td>{{review.Comment}} </td>
+                              </tr>
+                           {% endfor %}   
+                        </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             

@@ -112,7 +112,6 @@ box-sizing: border-box;
    margin: 0;
    margin-top: 5px;
    margin-bottom: 5px;
-   background: url('../images/bg.svg');
    background-repeat: no-repeat;
    background-attachment: cover;
    background-size: 100% 100%;
@@ -196,7 +195,7 @@ box-sizing: border-box;
   font-size: 25px;
   font-weight: 600;
   padding-top: 8px;
-  background-color: #3b4358;
+  
 
 }
 
@@ -305,5 +304,5 @@ box-sizing: border-box;
 }
 
 .bg-ocolor{
-  background-color:#34495e;
-}
+  background-color:#34495e;}
+  
