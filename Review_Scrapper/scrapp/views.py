@@ -4,9 +4,11 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
+import traceback , certifi ,ssl
 
 # Create your views here.
 def index(request):
+    
     
     crev = card.objects.all().order_by('-id')[0:3]
     mydict = {"card":crev}
@@ -29,82 +31,102 @@ def aboutus(request):
     return render(request,"aboutus.html",context=msg)
 
 # -------------------------------------------
+
 def review(request):
     if request.method == 'POST':
         try:
-            searchString= request.POST.get('input_data')
-            searchString=  searchString.replace(" ","")
+            # Get search input
+            searchString = request.POST.get('input_data', '').replace(" ", "")
             print(searchString)
-            history = Search(s_query= searchString)
+
+            # Save search history
+            history = Search(s_query=searchString)
             history.save()
-            flipkart_url = "https://www.flipkart.com/search?q=" + searchString
-            uClient = uReq(flipkart_url)
+
+            # Construct Flipkart URL
+            flipkart_url = f"https://www.flipkart.com/search?q={searchString}"
+            print(flipkart_url)
+
+            # Fetch Flipkart page
+            uClient = uReq(flipkart_url, cafile=certifi.where())
             flipkartPage = uClient.read()
             uClient.close()
 
+            # Parse HTML
             flipkart_html = bs(flipkartPage, "html.parser")
-            bigboxes = flipkart_html.findAll("div", {"class": "_1AtVbE col-12-12"})
-            del bigboxes[0:3]
+            # print(flipkart_html)
+            bigboxes = flipkart_html.findAll("div", {"class": "cPHDOP col-12-12"})
+            del bigboxes[:3]
+
+            # Extract first product details
+            if not bigboxes:
+                return HttpResponse("No products found", status=404)
+
+            # print(bigboxes)
+
             box = bigboxes[0]
+            # print(box)
             productLink = "https://www.flipkart.com" + box.div.div.div.a['href']
-            prodRes = requests.get(productLink)
-            prodRes.encoding='utf-8'
+            prodRes = requests.get(productLink, headers={'User-Agent': 'Mozilla/5.0'})
+            prodRes.encoding = 'utf-8'
             prod_html = bs(prodRes.text, "html.parser")
             # print(prod_html)
-            commentboxes = prod_html.find_all('div', {'class': "_16PBlm"})
 
-            filename = searchString + ".csv"
-            fw = open(filename, "w")
-            headers = "Product, Customer Name, Rating, Heading, Comment \n"
-            fw.write(headers)
+            # Get reviews
+            commentboxes = prod_html.find_all('div', {'class': "EPCmJX"})
+            print(type(commentboxes))
+            print(commentboxes[0])
+            # print(commentboxes)
             reviews = []
+
             for commentbox in commentboxes:
                 try:
-                    #name.encode(encoding='utf-8')
-                    name = commentbox.div.div.find_all('p', {'class': '_2sc7ZR _2V5EHH'})[0].text
-
+                    name_tag = commentbox.find('p', {'class': '_2NsDsF AwS1CA'})
+                    name = name_tag.text if name_tag else 'No Name'
                 except:
                     name = 'No Name'
 
                 try:
-                    #rating.encode(encoding='utf-8')
-                    rating = commentbox.div.div.div.div.text
-
-
+                    rating = commentbox.div.div.text
                 except:
                     rating = 'No Rating'
 
                 try:
-                    #commentHead.encode(encoding='utf-8')
-                    commentHead = commentbox.div.div.div.p.text
-
+                    commentHead_tag = commentbox.find('p', {'class': 'z9E0IG'})
+                    commentHead= commentHead_tag.text if commentHead_tag else "No Comments"
                 except:
                     commentHead = 'No Comment Heading'
-                    
+
                 try:
-                    comtag = commentbox.div.div.find_all('div', {'class': ''})
-                    #custComment.encode(encoding='utf-8')
-                    custComment = comtag[0].div.text
+                    comtag = commentbox.find('div', {'class': 'ZmyHeo'})
+                    if comtag:
+                        custComment= comtag.text.strip()
+
                 except Exception as e:
-                    print("Exception while creating dictionary: ",e)
+                    print("Exception while extracting comment:", e)
+                    custComment = "No Comment"
 
-                print("what doees ???")
-                mydict = {"Product": searchString, "Name": name, "Rating": rating, "CommentHead": commentHead,
-                          "Comment": custComment}
-                reviews.append(mydict)
-                # for x in reviews:
-                #     print(x)
-            return render( request, 'review.htm',context={'reviews':reviews})
+                reviews.append({
+                    "Product": searchString,
+                    "Name": name,
+                    "Rating": rating,
+                    "CommentHead": commentHead,
+                    "Comment": custComment
+                })
+
+            # Render the review page
+            return render(request, 'review.htm', {"reviews": reviews})
+
         except Exception as e:
-            print('The Exception message is: ',e)
-            return 'something is wrong'
-
+            print("The Exception message is:", e)
+            print(traceback.format_exc())
+            return HttpResponse("Something went wrong", status=500)
 
     else:
-        crev = card.objects.all().order_by('-id')[0:6]
-        mydict = {"card":crev}
-        return render(request,'product.html',context=mydict)
-    
+        crev = card.objects.only("id", "name").order_by('-id')[:6]
+        return render(request, 'product.html', {"card": crev})
+
+
 # ----------------------------------------------------------------------------
 
  
